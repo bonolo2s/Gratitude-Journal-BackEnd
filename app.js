@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const cors = require('cors')
 //const router = express.Router();
+const axios = require("axios"); 
 
 app.use(cors()); // Use cors as middleware
 app.use(express.json());
@@ -72,9 +73,39 @@ app.delete('/entries/id', (req,res) => {
     });
 });
 
-app.get('/', (req, res) => {
-    console.log("why though");
+//EndPoint for API qoutes
+const api_url = "https://zenquotes.io/api/quotes";
+
+app.get("/api/quote", async (req, res) => {
+    //try {
+    //    const response = await fetch(api_url);
+    //    if (!response.ok) {
+    //        throw new Error(`HTTP error! status: ${response.status}`);
+    //    }
+    //    const data = await response.json();
+    //    res.status(200).json(data);
+    //}
+    //catch (error) {
+    //    console.log('Failed to make fetch request');
+    //    console.error(error);
+    //    res.status(500).json({ error: "An error occurred while fetching the quote" });
+    //}
+
+    fetch(api_url)
+    .then(response => response.json())
+    .then(data => {
+       let quotes = data.map(quoteObject => quoteObject.q); // Extracts the quote text
+       res.send(quotes); // Sends the quotes back to the frontend
+    })
+    .catch(error => {
+        console.error('An error occurred:', error);
+        res.status(500).send('An error occurred while fetching quotes');
+    });
 });
+
+
+
+//lets create an endpoint for Authentications
 
 
 app.listen(port,()=>
