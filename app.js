@@ -7,10 +7,10 @@ const cors = require('cors')
 //const router = express.Router();
 const axios = require("axios"); 
 
-app.use(cors()); // Use cors as middleware
+app.use(cors()); // Use cors as middleware// ill need to know what this does again
 app.use(express.json());
 
-const url = 'mongodb://0.0.0.0:27017/MyDB';
+const url = 'mongodb://0.0.0.0:27017/GratitudeHub';
 mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB...', err));
@@ -26,7 +26,7 @@ const Entry = mongoose.model('Entry', JournalEntrySchema);
 
 
 // Endpoint to get all journal entries
-app.get('/entries', (req, res) => {
+app.get('/Entries', (req, res) => {
 
     Entry.find({})
     .then(entries => {
@@ -39,7 +39,7 @@ app.get('/entries', (req, res) => {
 });
 
 // Endpoint to create a new journal entry
-app.post('/entries', (req, res) => {
+app.post('/Entries', (req, res) => {
     const entryData = req.body;
 
     const newEntry = new Entry(entryData); // Changed variable name here
@@ -56,7 +56,7 @@ app.post('/entries', (req, res) => {
 });
 
 //Endpoint for DELETE
-app.delete('/entries/id', (req,res) => {
+app.delete('/Entries/id', (req,res) => {
     const { id } = req.params;
     
     Entry.deleteOne({ _id: id })

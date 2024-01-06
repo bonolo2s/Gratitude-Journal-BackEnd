@@ -1,9 +1,33 @@
 # Gratitude-Journal-BackEnd
 
-# BackEnd App for my FrontEnd Gratitude Journal App
-
+=======
 ## Description
-The app is designed to handle requests made by the frontend. It can make POST, PUT, DELETE, and GET requests made by users on the UI interface and also establish communication with a 3rd party API that generates quotes.
+This is the backend for the Gratitude Journal App. It hosts APIs for CRUD (Create, Read, Update, Delete) operations to a MongoDB database.
+
+## Technologies Used
+This project is built with the following technologies:
+
+- Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine.
+- Express: A fast, unopinionated, and minimalist web framework for Node.js.
+
+## Features
+Here are the key features of this project:
+
+1. **CRUD Operations**: The app provides APIs for creating, reading, updating, and deleting journal entries in a MongoDB database.
+
+## Installation and Setup
+
+Provide instructions on how to install and setup your project locally. For example:
+
+1. Clone the repository: `https://github.com/bonolo2s/Gratitude-Journal-BackEnd.git`
+2. Navigate to the project directory: `cd projectname`
+3. Install dependencies: `npm install`
+4. Start the server: `npm start`
+
+## Usage
 
 ## Contact Info
 WhatsApp: 0727525285
+
+Thank you for checking out my project!
+>>>>>>> 8763bc1a6e9df25ff16750cbd9353e777c5caf8d
