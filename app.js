@@ -26,7 +26,7 @@ const Entry = mongoose.model('Entry', JournalEntrySchema);
 
 
 // Endpoint to get all journal entries
-app.get('/Entries', (req, res) => {
+app.get('/entries', (req, res) => {
 
     Entry.find({})
     .then(entries => {
@@ -39,7 +39,7 @@ app.get('/Entries', (req, res) => {
 });
 
 // Endpoint to create a new journal entry
-app.post('/Entries', (req, res) => {
+app.post('/entries', (req, res) => {
     const entryData = req.body;
 
     const newEntry = new Entry(entryData); // Changed variable name here
@@ -56,7 +56,7 @@ app.post('/Entries', (req, res) => {
 });
 
 //Endpoint for DELETE
-app.delete('/Entries/id', (req,res) => {
+app.delete('/entries/:id', (req,res) => {
     const { id } = req.params;
     
     Entry.deleteOne({ _id: id })
@@ -102,11 +102,6 @@ app.get("/api/quote", async (req, res) => {
         res.status(500).send('An error occurred while fetching quotes');
     });
 });
-
-
-
-//lets create an endpoint for Authentications
-
 
 app.listen(port,()=>
 {
