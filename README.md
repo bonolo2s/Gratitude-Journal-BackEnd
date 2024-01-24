@@ -28,6 +28,15 @@ Here are the key features of this project:
 ## Usage
 Once the server runs, you can interact with the APIs using any HTTP client like curl, Postman, or even your browser.
 
+## Contribution
+Contributions are welcome! If you're interested in contributing, here are some guidelines:
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Make your changes in your branch.
+4. Submit a pull request.
+
+Please ensure your code adheres to the existing style for consistency.
+
 
 ## Contact Info
 WhatsApp: 0727525285
