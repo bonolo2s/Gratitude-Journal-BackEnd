@@ -23,7 +23,7 @@ Here are the key features of this project:
 1. Clone the repository: `https://github.com/bonolo2s/Gratitude-Journal-BackEnd.git`
 2. Navigate to the project directory: `cd projectname`
 3. Install dependencies: `npm install`
-4. Start the server: `npm start`
+4. Start the server: `node app.js`
 
 ## Usage
 Once the server runs, you can interact with the APIs using any HTTP client like curl, Postman, or even your browser.
